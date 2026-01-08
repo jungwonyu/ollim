@@ -239,10 +239,12 @@ function openModal(type, idx = null) {
     };
   }
   modal.classList.remove('hidden');
+  document.body.style.overflow = 'hidden';
 }
 
 function closeModal() {
   document.getElementById('confirm-modal').classList.add('hidden');
+  document.body.style.overflow = '';
 }
 
 function openResetModal() {
@@ -374,4 +376,37 @@ document.getElementById('import-csv').addEventListener('change', function() {
 document.querySelector('.js-verifyPassword').addEventListener('click', verifyPassword);
 
 const MASTER_KEY = '1234'; // 마스터 비밀번호 설정!
+
+const modal = document.getElementById("guideModal");
+const btn = document.getElementById("guideBtn");
+const span = document.getElementsByClassName("ollim-close")[0];
+
+// 모달 제어
+btn.onclick = () => {
+  modal.style.display = "block";
+  document.body.style.overflow = 'hidden';
+};
+span.onclick = () => {
+  modal.style.display = "none";
+  document.body.style.overflow = '';
+};
+window.onclick = (e) => {
+  if (e.target == modal) {
+    modal.style.display = "none";
+    document.body.style.overflow = '';
+  }
+}
+
+// 탭 전환 로직
+function openTab(evt, tabName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tab-content");
+  for (i = 0; i < tabcontent.length; i++) { tabcontent[i].style.display = "none"; }
+  tablinks = document.getElementsByClassName("tab-link");
+  for (i = 0; i < tablinks.length; i++) { tablinks[i].className = tablinks[i].className.replace(" active", ""); }
+  document.getElementById(tabName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
 window.openModal = openModal;
+window.openTab = openTab;

@@ -161,6 +161,70 @@
     </div>
   </div>
 
+  <button id="guideBtn" style="position: fixed; bottom: 25px; right: 25px; width: 60px; height: 60px; background: #0064FF; color: white; border: none; border-radius: 50%; cursor: pointer; box-shadow: 0 4px 15px rgba(0,100,255,0.3); z-index: 1000; font-size: 24px; display: flex; align-items: center; justify-content: center;" title="사용 가이드">
+      📖
+  </button>
+
+  <div id="guideModal" class="ollim-modal">
+      <div class="ollim-modal-content">
+          <span class="ollim-close">&times;</span>
+          
+          <div class="ollim-modal-header">
+              <h2 style="margin:0; color:#0064FF; font-size: 22px;">OLLIM 사용 가이드</h2>
+              <p style="font-size: 13px; color: #888; margin-top: 5px;">성공적인 투자를 위한 첫걸음</p>
+          </div>
+
+          <div class="ollim-modal-body">
+              <section class="guide-section">
+                  <h3>📱 스마트폰 앱처럼 설치하기</h3>
+                  <div class="tab-menu">
+                      <button class="tab-link active" onclick="openTab(event, 'ios')">iPhone (iOS)</button>
+                      <button class="tab-link" onclick="openTab(event, 'android')">Android</button>
+                  </div>
+                  
+                  <div id="ios" class="tab-content" style="display: block;">
+                      <ol>
+                          <li><b>Safari</b> 브라우저로 접속</li>
+                          <li>하단 중앙 <b>공유 버튼</b>(⬆️) 클릭</li>
+                          <li><b>[홈 화면에 추가]</b> 선택</li>
+                          <li>우측 상단 <b>[추가]</b> 클릭</li>
+                      </ol>
+                  </div>
+                  <div id="android" class="tab-content">
+                      <ol>
+                          <li><b>Chrome</b> 또는 <b>삼성인터넷</b> 접속</li>
+                          <li>우측 상단 혹은 하단 <b>메뉴(⋮ 또는 ☰)</b> 클릭</li>
+                          <li><b>[앱 설치]</b> 또는 <b>[홈 화면에 추가]</b> 선택</li>
+                      </ol>
+                  </div>
+                  <p class="tip-box">💡 홈 화면 아이콘으로 접속 시 주소창 없이 <b>풀스크린</b>으로 이용 가능합니다.</p>
+              </section>
+
+              <section class="guide-section">
+                  <h3>🔐 보안 및 데이터 관리</h3>
+                  <ul>
+                      <li><b>비밀번호:</b> 최초 접속 시 구매 안내받은 비번을 입력하세요.</li>
+                      <li><b>저장 방식:</b> 데이터는 서버가 아닌 <b>기기 내부(로컬)</b>에만 저장됩니다. 브라우저 캐시 삭제 시 데이터가 소실될 수 있습니다.</li>
+                      <li><b>백업:</b> 기기 변경 시 <b>[📥 내보내기]</b>로 CSV를 저장한 후, 새 기기에서 <b>[📤 불러오기]</b> 하세요.</li>
+                  </ul>
+              </section>
+
+              <section class="guide-section">
+                  <h3>📊 주요 기능 활용</h3>
+                  <ul>
+                      <li><b>스마트 히스토리:</b> [Load More]로 과거 내역을 확인하고, [Close Records]로 화면을 깔끔하게 접으세요.</li>
+                      <li><b>실시간 대시보드:</b> 입력 즉시 자산 곡선과 수익률이 업데이트되며, 목표 달성 등급(Lv)이 표시됩니다.</li>
+                  </ul>
+              </section>
+
+              <section class="guide-section warning">
+                  <p>⚠️ <b>저작권 고지:</b> 본 프로그램의 저작권은 OLLIM에 있으며, 무단 복제 및 배포 시 법적 처벌을 받을 수 있습니다.</p>
+                  <p>🛠️ <b>초기화:</b> 데이터 오류 시 [Factory Reset]을 사용하세요. (복구 불가)</p>
+              </section>
+          </div>
+      </div>
+  </div>
+
   <script type="module" src="dist/bundle.js"></script>
 </body>
 
