@@ -1,0 +1,79 @@
+:root {
+  --bg-color: #0f172a;
+  --card-bg: rgba(30, 41, 59, 0.7);
+  --text-main: #ffffff;
+  --text-muted: #94a3b8;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --input-bg: #1e293b;
+}
+
+html.light-mode {
+  --bg-color: #f8fafc;
+  --card-bg: rgba(255, 255, 255, 0.9);
+  --text-main: #1e293b;
+  --text-muted: #64748b;
+  --border-color: rgba(0, 0, 0, 0.1);
+  --input-bg: #f1f5f9;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  font-family: sans-serif;
+  transition: background-color 0.3s ease;
+  overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.glass-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+}
+
+input {
+  height: 48px;
+  box-sizing: border-box;
+  width: 100% !important;
+  background-color: var(--input-bg);
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
+  border-radius: 0.75rem;
+  padding: 0 12px;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+input::placeholder {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.modal-bg {
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+}
+
+@keyframes modalShow {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.animate-modal {
+  animation: modalShow 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.logo-font {
+  letter-spacing: -0.05em;
+}
+
+#auth-overlay { background: var(--bg); z-index: 9999; transition: opacity 0.5s ease; }
